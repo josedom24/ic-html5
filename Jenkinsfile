@@ -13,6 +13,11 @@ pipeline {
                 git branch:'master',url:'https://github.com/josedom24/ic-travis-html5.git'
             }
         }
+	stage('Test html5') {
+	    steps {
+	        sh 'pip install html5validator'
+		sh 'html5validator --root _build/'
+	    }
         
         stage('Install surge')
         {
