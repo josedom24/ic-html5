@@ -16,7 +16,8 @@ pipeline {
 	stage('Test html5') {
 	    steps {
 	        sh 'pip install html5validator'
-		sh 'html5validator --root _build/'
+		    sh 'html5validator --root _build/'
+            }
 	    }
         
         stage('Install surge')
